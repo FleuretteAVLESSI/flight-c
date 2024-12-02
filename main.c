@@ -15,8 +15,9 @@ typedef struct {
     int seats_available;
 } Flight;
 
-// Fonction pour ajouter un vol
-void add_flight() {
+
+void add_flight()//ceci est la fonction pour ajouter un vol
+ {
     Flight flight;
     int fd = open(FILENAME, O_WRONLY | O_CREAT | O_APPEND, 0644);
     if (fd == -1) {
@@ -42,8 +43,9 @@ void add_flight() {
     close(fd);
 }
 
-// Fonction pour afficher les informations des vols
-void display_flights() {
+
+void display_flights()//pour afficher les vols
+ {
     Flight flight;
     int fd = open(FILENAME, O_RDONLY);
     if (fd == -1) {
@@ -60,8 +62,9 @@ void display_flights() {
     close(fd);
 }
 
-// Fonction pour réserver un siège
-void reserve_seat() {
+
+void reserve_seat() //pour reserver un siège
+{
     Flight flight;
     char code[10];
     int fd = open(FILENAME, O_RDWR);
@@ -99,8 +102,9 @@ void reserve_seat() {
     close(fd);
 }
 
-// Fonction pour annuler une réservation
-void cancel_reservation() {
+
+void cancel_reservation()//pour annuler une reservation
+ {
     Flight flight;
     char code[10];
     int fd = open(FILENAME, O_RDWR);
@@ -134,7 +138,6 @@ void cancel_reservation() {
     close(fd);
 }
 
-// Menu principal
 void menu() {
     int choice;
     do {
@@ -142,9 +145,9 @@ void menu() {
         printf("1. Ajouter un vol\n");
         printf("2. Réserver un siège\n");
         printf("3. Annuler une réservation\n");
-        printf("4. Afficher les vols\n");
-        printf("5. Quitter\n");
-        printf("Votre choix : ");
+        printf("4. Affichage des vols\n");
+        printf("5. Sortir\n");
+        printf("Faites un choix : ");
         scanf("%d", &choice);
 
         switch (choice) {
