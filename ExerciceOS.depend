@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1733158180 source:c:\users\fleur\documents\exerciceos\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<unistd.h>
+	<fcntl.h>
+	<errno.h>
+
